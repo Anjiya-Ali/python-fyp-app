@@ -8,7 +8,7 @@ import pandas as pd
 
 app = Flask(__name__)
 CORS(app)
-app.config['MONGO_URI'] = 'mongodb://127.0.0.1:27017/Learnlance'
+app.config['MONGO_URI'] = 'mongodb+srv://anjiya:helloworld@cluster0.rq0tmnn.mongodb.net/Learnlance?retryWrites=true&w=majority&appName=Cluster0'
 mongo = PyMongo(app)
 
 JWT_SECRET = '@insha@is@a@good@girl@'
@@ -215,5 +215,3 @@ def get_courses():
     except Exception as error:
         return jsonify({'error': str(error)}), 500
     
-if __name__ == '__main__':
-    app.run(host='192.168.0.147', debug=True)
